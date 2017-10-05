@@ -93,7 +93,7 @@ def conv_block(input_tensor, kernel_size, filters, stage, block, strides=(2,2)):
 def ResNet50(include_top=True, input_tensor=None, input_shape=None, pooling=None, classes=1000):
 	# ResNet 50 layers architecture
 	img_input = input_tensor
-
+	
 	x = ZeroPadding2D((3, 3))(img_input)
 	x = Conv2D(64, (7, 7), strides=(2, 2), name="conv1")(x)
 	x = BatchNormalization(axis=1, name="bn_conv1")(x)
